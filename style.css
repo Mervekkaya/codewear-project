@@ -1,0 +1,338 @@
+/* --- GENEL AYARLAR (Reset) --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Kutuların boyutu şişmesin diye */
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #1e272e; /* CodeWear Ana Renk (Koyu) */
+    color: #ecf0f1; /* Yazı Rengi (Açık) */
+}
+
+a {
+    text-decoration: none; /* Link alt çizgilerini kaldır */
+    color: inherit; /* Rengini babasından alsın */
+}
+
+ul {
+    list-style: none; /* Liste noktalarını kaldır */
+}
+
+/* --- 1. NAVBAR (FLEXBOX BURADA) --- */
+.navbar {
+    background-color: #111; /* Menü biraz daha koyu olsun */
+    height: 80px;
+    padding: 0 50px; /* Sağdan soldan boşluk */
+    
+    /* İŞTE FLEXBOX BURADA BAŞLIYOR */
+    display: flex; /* 1. Kural: İçindekileri yan yana diz! */
+    justify-content: space-between; /* 2. Kural: Logo sola, Menü sağa gitsin! */
+    align-items: center; /* 3. Kural: Dikeyde ortalı dursunlar */
+}
+
+.logo {
+    font-family: 'Courier New', monospace; /* Kod havası */
+    font-size: 24px;
+    font-weight: bold;
+    color: #00d2d3; /* CodeWear Neon Mavisi */
+}
+
+/* Menü Linklerinin de yan yana dizilimi  */
+.menu-links {
+    display: flex; /* Linkleri (li) yan yana diz */
+    gap: 20px; /* Aralarına 20px boşluk bırak */
+}
+
+.menu-links a {
+    font-size: 16px;
+    transition: color 0.3s; /* Yumuşak renk değişimi */
+}
+
+.menu-links a:hover {
+    color: #00d2d3; /* Üzerine gelince neon mavi olsun */
+}
+
+/* Özel Buton Tasarımı */
+.btn-fiyat {
+    border: 1px solid #00d2d3;
+    padding: 8px 15px;
+    border-radius: 5px;
+}
+
+.btn-fiyat:hover {
+    background-color: #00d2d3;
+    color: #111;
+}
+
+/* --- 2. HERO SECTION (VİTRİN) --- */
+.hero {
+    display: flex; /* İçindekileri (Yazı ve Resim) yan yana getir */
+    align-items: center; /* Dikeyde birbirlerini ortalasınlar */
+    justify-content: space-between; /* Aralarını aç */
+    padding: 0 10%; /* Sağdan soldan %10 boşluk bırak (çok kenara yapışmasın) */
+    height: 80vh; /* Ekran yüksekliğinin %80'ini kaplasın (Ferah olsun) */
+}
+
+/* Kardeş Payı Yapıyoruz */
+.hero-text {
+    flex: 1; /* Mevcut alanın yarısı benim olsun */
+}
+
+.hero-image {
+    flex: 1; /* Diğer yarı da benim olsun */
+    text-align: right; /* Resmi sağa yasla */
+}
+
+/* --- Görsel Süslemeler (Makyaj Kısmı) --- */
+
+.hero-text h1 {
+    font-size: 60px; /* Kocaman başlık */
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.hero-text p {
+    font-size: 18px;
+    color: #bdc3c7; /* Biraz gri ton */
+    margin-bottom: 30px;
+    line-height: 1.6;
+    max-width: 80%; /* Yazı çok uzayıp gitmesin */
+}
+
+/* O Dev Gibi Resmi Küçültelim */
+.hero-image img {
+    width: 80%; /* Kendi kutusunun %80'i kadar olsun */
+    border-radius: 20px; /* Köşeleri yuvarlat */
+    box-shadow: 0 0 20px rgba(0, 210, 211, 0.3); /* Arkaya neon mavi gölge atalım (CodeWear tarzı) */
+}
+
+/* Ana Buton Tasarımı (Call to Action) */
+.btn-primary {
+    background-color: #00d2d3; /* Neon Mavi */
+    color: #1e272e; /* Koyu yazı */
+    padding: 15px 30px;
+    font-weight: bold;
+    border-radius: 50px; /* Tam yuvarlak kenarlar */
+    font-size: 18px;
+    transition: transform 0.3s; /* Hareket efekti */
+    display: inline-block; /* Margin işlesin diye */
+}
+
+.btn-primary:hover {
+    background-color: #fff; /* Üstüne gelince beyaz olsun */
+    transform: translateY(-5px); /* Hafifçe yukarı zıplasın */
+}
+
+/* --- 3. ÜRÜNLER BÖLÜMÜ (CSS GRID) --- */
+.products {
+    padding: 100px 10%; /* Üstten alttan boşluk, yanlardan hizalama */
+    background-color: #1e272e; /* Zemin rengi devam etsin */
+}
+
+.section-title {
+    text-align: center; /* Başlığı ortala */
+    font-size: 36px;
+    margin-bottom: 50px;
+    color: #00d2d3; /* Neon Mavi Başlık */
+}
+
+/* İŞTE GRID BURADA */
+.product-grid {
+    display: grid; /* Izgara sistemini başlat */
+    /* Sihirli Komut: 3 Tane Eşit Sütun Oluştur */
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 30px; /* Kartların arası birbirine yapışmasın, 30px boşluk olsun */
+}
+
+/* Kartların Tasarımı */
+.card {
+    background-color: #2d3436; /* Kartın kendi rengi (Zeminden biraz açık) */
+    padding: 40px 20px;
+    border-radius: 15px; /* Yumuşak köşeler */
+    text-align: center;
+    border: 1px solid transparent; /* Gizli kenarlık (Hover için hazırlık) */
+    transition: all 0.3s ease; /* Tüm değişimler yumuşak olsun */
+}
+
+.card h3 {
+    margin-bottom: 15px;
+    font-size: 22px;
+}
+
+.card p {
+    color: #bdc3c7;
+}
+
+/* Hover Efekti: Mouse ile üstüne gelince ne olsun? */
+.card:hover {
+    border-color: #00d2d3; /* Kenarlık Neon Mavi olsun */
+    transform: translateY(-10px); /* Kart havaya kalksın */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5); /* Altına gölge düşsün */
+    cursor: pointer;
+}
+
+/* --- FOOTER AYARLARI --- */
+footer {
+    text-align: center; /* İşte sihirli kod bu: Yazıyı ortala! */
+    padding: 30px;
+    background-color: #111; /* Simsyah zemin */
+    color: #7f8c8d; /* Soluk gri yazı */
+    font-size: 14px;
+    margin-top: 50px; /* Ürünlerden biraz uzaklaşsın */
+}
+
+/* =========================================
+   RESPONSIVE (MOBİL) TASARIM KURALLARI
+   768px ve altındaki ekranlar için çalışır
+   ========================================= */
+@media (max-width: 768px) {
+
+    /* 1. NAVBAR DÜZENLEMESİ */
+    .navbar {
+        height: auto; /* Sabit yüksekliği kaldır, içeriğe göre uzasın */
+        flex-direction: column; /* Yan yana durmayı bırak, alt alta geç */
+        padding: 20px; /* Mobilde kenar boşluklarını azalt */
+    }
+
+    .menu-links {
+        margin-top: 20px; /* Logo ile menü arasına boşluk koy */
+        flex-direction: column; /* Linkleri de alt alta diz */
+        width: 100%; /* Menü tüm genişliği kaplasın */
+        text-align: center; /* Linkleri ortala */
+    }
+
+    /* 2. HERO (VİTRİN) DÜZENLEMESİ */
+    .hero {
+        flex-direction: column-reverse; /* DİKKAT: Resmi üste, yazıyı alta al! */
+        height: auto; /* Tam ekran zorunluluğunu kaldır, içerik kadar uza */
+        padding: 50px 20px; /* Mobilde kenar boşluklarını daralt */
+        text-align: center; /* Mobilde yazılar ortalı daha güzel durur */
+    }
+
+    .hero-image {
+        margin-bottom: 30px; /* Resim ile yazı arasına boşluk */
+        width: 100%; /* Resim kapsayıcısı tam genişlik olsun */
+    }
+    
+    .hero-text {
+        width: 100%; /* Yazı alanı tam genişlik olsun */
+    }
+
+    .hero-text h1 {
+        font-size: 40px; /* Mobilde o dev başlığı biraz küçültelim */
+    }
+
+    /* 3. ÜRÜNLER (GRID) DÜZENLEMESİ */
+    .product-grid {
+        /* Masaüstünde 3 sütundu, mobilde TEK sütun olsun */
+        grid-template-columns: 1fr; 
+    }
+}
+
+/* =========================================
+   TASK 2.2: GHOST PROTOCOL (FİYATLAR)
+   HTML'e dokunmadan sadece CSS ile düzenleme
+   ========================================= */
+
+/* Sayfa düzeni */
+.pricing-page {
+    background-color: #1e272e; /* Ana renk */
+    color: #ecf0f1;
+    text-align: center;
+    padding: 50px;
+}
+
+.pricing-header {
+    margin-bottom: 50px;
+}
+
+.pricing-header a {
+    color: #00d2d3;
+    font-weight: bold;
+    margin-top: 10px;
+    display: inline-block;
+}
+
+/* --- KRİTİK NOKTA: DİZİLİM --- */
+/* Alt alta duran listeyi yan yana getiriyoruz */
+.pricing-container {
+    display: flex; /* Flexbox'ı aç */
+    justify-content: center; /* Kutuları ortada topla */
+    align-items: center; /* Dikeyde hizala */
+    gap: 30px; /* Kutular birbirine yapışmasın */
+    flex-wrap: wrap; /* Mobilde sığmazsa alt satıra geçsin (Otomatik Responsive!) */
+    max-width: 1200px; /* Çok geniş ekranlarda dağılmasın */
+    margin: 0 auto; /* Konteyneri ortala */
+}
+
+/* --- KART TASARIMI --- */
+.price-box {
+    background-color: #2d3436;
+    padding: 40px;
+    border-radius: 20px;
+    width: 300px; /* Kartların genişliği sabit olsun */
+    position: relative; /* "Best Seller" etiketi için hazırlık */
+    transition: transform 0.3s;
+    border: 1px solid #4b6584;
+}
+
+/* Mouse ile üzerine gelince */
+.price-box:hover {
+    transform: scale(1.05); /* Hafifçe büyüsün */
+    border-color: #00d2d3; /* Kenarlık parlasın */
+    box-shadow: 0 10px 30px rgba(0, 210, 211, 0.2); /* Neon gölge */
+}
+
+/* Fiyat Yazısı */
+.price {
+    font-size: 48px;
+    font-weight: bold;
+    color: #00d2d3;
+    margin: 20px 0;
+}
+
+/* Özellik Listesi */
+.features {
+    text-align: left; /* Maddeler solda dursun */
+    margin-bottom: 30px;
+    color: #bdc3c7;
+}
+
+.features li {
+    margin-bottom: 10px;
+    border-bottom: 1px solid #4b6584; /* Her maddenin altına ince çizgi */
+    padding-bottom: 5px;
+}
+
+/* Satın Al Butonu */
+.btn-buy {
+    background-color: transparent;
+    border: 2px solid #00d2d3;
+    color: #00d2d3;
+    padding: 10px 30px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s;
+}
+
+.btn-buy:hover {
+    background-color: #00d2d3;
+    color: #1e272e;
+}
+
+/* --- ORTADAKİ KARTI ÖNE ÇIKARMA (BEST SELLER) --- */
+/* HTML'de 'best-seller' class'ı ekli olan kutuyu farklı yapalım */
+.best-seller {
+    background-color: #1e272e; /* Farklı arka plan */
+    border: 2px solid #00d2d3; /* Kalın çerçeve */
+    transform: scale(1.1); /* Diğerlerinden biraz daha büyük dursun */
+    z-index: 1; /* Öne çıksın */
+}
+
+/* Best Seller Hover durumunda daha da büyümeli */
+.best-seller:hover {
+    transform: scale(1.15);
+}
