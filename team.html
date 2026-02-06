@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CodeWear - Ekibimiz</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <header class="navbar">
+        <div class="logo">CodeWear_</div>
+        <nav>
+            <ul class="menu-links">
+                <li><a href="index.html">Ana Sayfa</a></li> <!-- Geri dönüş linki -->
+                <li><a href="#">Koleksiyon</a></li>
+                <li><a href="team.html" class="active">Ekibimiz</a></li>
+                <li><a href="task2.html" class="btn-fiyat">Paket Fiyatları</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- 1. KURUMSAL VİZYON -->
+    <section class="team-vision">
+        <h1>Kodun Arkasındaki Zeka.</h1>
+        <p>Biz sadece kıyafet tasarlamıyoruz; geliştiricilerin yaşam tarzını derleyip (compile) sunuyoruz. <br>
+           Her dikişte bir algoritma, her tasarımda bir fonksiyon var.</p>
+    </section>
+
+    <!-- 2. PERSONEL KARTLARI (FLIP CARD YAPISI) -->
+    <section class="team-container">
+        
+        <!-- KART 1: Genel Müdür -->
+        <div class="flip-card">
+            <div class="flip-card-inner">
+                <div class="flip-card-front">
+                    <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="CEO">
+                    <h3>Ahmet Yılmaz</h3>
+                    <p>Genel Müdür</p>
+                </div>
+                <div class="flip-card-back">
+                    <h3>Vizyoner</h3>
+                    <p>"Bug'sız bir dünya mümkün değil ama şık bir dünya mümkün."</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- KART 2: Kreatif Direktör -->
+        <div class="flip-card">
+            <div class="flip-card-inner">
+                <div class="flip-card-front">
+                    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Creative Director">
+                    <h3>Zeynep Kaya</h3>
+                    <p>Kreatif Direktör</p>
+                </div>
+                <div class="flip-card-back">
+                    <h3>Tasarımcı</h3>
+                    <p>CSS Grid ustası ve renk paleti sihirbazı.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- KART 3: SİZ (Lead Developer & FlexFarm Sertifikalı) -->
+        <div class="flip-card">
+            <div class="flip-card-inner">
+                <div class="flip-card-front">
+                    <!-- Temsili Developer Resmi -->
+                    <img src="images/profil.jpeg" alt="Lead Developer">
+                    <h3>Merve Kaya</h3> <!-- Sizin Adınız -->
+                    <p style="color: #00d2d3; font-weight: bold;">Lead Developer</p>
+                </div>
+                <div class="flip-card-back">
+                    <h3>Full Stack Ninja</h3>
+                    <p>Backend'den Frontend'e tam hakimiyet.</p>
+                    
+                    <!-- TASK 3.2: FLEXFARM SERTİFİKASI -->
+                    <div class="certificate-badge">
+                        <span>🏆 FlexFarm Certified</span>
+                        <!-- Sertifika resmi (Temsili) -->
+                        <img src="https://cdn-icons-png.flaticon.com/512/2912/2912761.png" class="cert-img" alt="FlexFarm Sertifikası">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <footer>
+        <p>&copy; 2026 CodeWear Solutions. Tüm hakları saklıdır.</p>
+    </footer>
+
+</body>
+</html>

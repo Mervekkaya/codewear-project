@@ -336,3 +336,116 @@ footer {
 .best-seller:hover {
     transform: scale(1.15);
 }
+
+/* =========================================
+   TASK 3.1 & 3.2: TEAM PAGE & ANIMATIONS
+   ========================================= */
+
+/* Vizyon Bölümü */
+.team-vision {
+    text-align: center;
+    padding: 60px 20px;
+    background-color: #2d3436;
+}
+
+.team-vision h1 {
+    color: #00d2d3;
+    margin-bottom: 20px;
+}
+
+/* Ekip Konteyner (Flexbox ile Hizalama) */
+.team-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 40px;
+    padding: 50px 20px;
+}
+
+/* --- FLIP CARD (DÖNEN KART) YAPISI --- */
+
+/* 1. Kartın Dış Çerçevesi */
+.flip-card {
+    background-color: transparent;
+    width: 300px;
+    height: 400px;
+    perspective: 1000px; /* 3D derinlik hissi verir (Zorunlu) */
+}
+
+/* 2. İç Kapsayıcı (Dönecek olan kısım) */
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s; /* Dönüş süresi 0.8 saniye */
+    transform-style: preserve-3d; /* Çocuk elementlerin 3D düzlemde kalmasını sağlar */
+}
+
+/* 3. Hover Durumu: Mouse gelince Y ekseninde 180 derece dön */
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+/* 4. Ön ve Arka Yüz Ortak Ayarlar */
+.flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden; /* Arkası dönükken gizle (Safari) */
+    backface-visibility: hidden; /* Arkası dönükken gizle (Standart) */
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+/* Ön Yüz Tasarımı */
+.flip-card-front {
+    background-color: #2d3436;
+    color: #ecf0f1;
+    border: 1px solid #4b6584;
+}
+
+.flip-card-front img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%; /* Resmi yuvarlak yap */
+    object-fit: cover;
+    margin-bottom: 20px;
+    border: 3px solid #00d2d3;
+}
+
+/* Arka Yüz Tasarımı */
+.flip-card-back {
+    background-color: #00d2d3; /* Arka plan neon mavi olsun */
+    color: #1e272e; /* Yazılar koyu olsun */
+    transform: rotateY(180deg); /* Başlangıçta arkası dönük olsun */
+    padding: 20px;
+}
+
+/* --- TASK 3.2: FLEXFARM SERTİFİKA ROZETİ --- */
+.certificate-badge {
+    margin-top: 20px;
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    
+    /* Sertifika Animasyonu: Nabız gibi atma efekti */
+    animation: pulse 2s infinite; 
+}
+
+.cert-img {
+    width: 50px;
+    display: block;
+    margin: 10px auto 0;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
