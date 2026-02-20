@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CodeWear - Giyilebilir Teknoloji</title>
+    <!-- Gerekli ikonlar için Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -12,49 +14,78 @@
         <div class="logo">CodeWear_</div>
         <nav>
             <ul class="menu-links">
-                <li><a href="#">Koleksiyon</a></li>
-                <li><a href="#">Hakkımızda</a></li>
+                <li><a href="#koleksiyon">Koleksiyon</a></li>
+                <li><a href="#doviz">Döviz Çevirici</a></li>  
                 <li><a href="team.html">Ekibimiz</a></li>
                 <li><a href="teklif.html">Fiyat Hesapla</a></li>
-                <li><a href="#iletisim">İletişim</a></li>
                 <li><a href="task2.html" class="btn-fiyat">Paket Fiyatları</a></li>
+                <!-- Karanlık Mod Butonu -->
+                <li><i class="fas fa-moon" id="theme-toggle"></i></li>
             </ul>
         </nav>
     </header>
 
-    <section class="hero">
-        <div class="hero-text">
-            <h1>Tarzını <br> Kodla.</h1>
-            <p>Yazılımcılar için özel tasarlanmış, rahat ve modern giyim koleksiyonu. Bug'sız bir stil için hemen keşfet.</p>
-            <a href="#" class="btn-primary">Alışverişe Başla</a>
-        </div>
-        <div class="hero-image">
-            <img src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="CodeWear Model">
-        </div>
-    </section>
+    <main>
+        <section class="hero">
+            <div class="hero-text">
+                <h1>Tarzını <br> Kodla.</h1>
+                <p>Yazılımcılar için özel tasarlanmış, rahat ve modern giyim koleksiyonu. Bug'sız bir stil için hemen keşfet.</p>
+                <a href="#koleksiyon" class="btn-primary">Alışverişe Başla</a>
+            </div>
+            <div class="hero-image">
+                <img src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="CodeWear Model">
+            </div>
+        </section>
 
-    <section class="products">
-        <h2 class="section-title">Yeni Gelenler</h2>
-        
-        <div class="product-grid">
-            <div class="card">
-                <h3>Debug Hoodie</h3>
-                <p>Hata ayıklarken sıcak tutar.</p>
+        <section id="koleksiyon" class="products">
+            <h2 class="section-title">Yeni Gelenler</h2>
+            
+            <div class="product-grid">
+                <div class="card">
+                    <h3>Debug Hoodie</h3>
+                    <p>Hata ayıklarken sıcak tutar.</p>
+                </div>
+                <div class="card">
+                    <h3>React T-Shirt</h3>
+                    <p>Component tabanlı rahatlık.</p>
+                </div>
+                <div class="card">
+                    <h3>Python Çorapları</h3>
+                    <p>Ayağınızı yerden kesen hız.</p>
+                </div>
             </div>
-            <div class="card">
-                <h3>React T-Shirt</h3>
-                <p>Component tabanlı rahatlık.</p>
+        </section>
+
+        <!-- CURRENCY CONVERTER SECTION
+        <section id="doviz" class="section container">
+            <h2 class="section-title">Micro App: Döviz Çevirici</h2>
+            <div class="converter-container">
+                <form class="converter-form">
+                    <div class="form-group">
+                        <label for="amount">Miktar</label>
+                        <input type="number" id="amount" value="100" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="from-currency">Para Birimi</label>
+                        <select id="from-currency" class="form-control">
+                            <option value="EUR">EUR</option>
+                            <option value="USD">USD</option>
+                            <option value="TRY" selected>TRY</option>
+                        </select>
+                    </div>
+                </form>
+                <div id="converter-result" class="converter-result">
+                    <p>Lütfen bir para birimi seçin</p>
+                </div>
             </div>
-            <div class="card">
-                <h3>Python Çorapları</h3>
-                <p>Ayağınızı yerden kesen hız.</p>
-            </div>
-        </div>
-    </section>
+        </section>
+    </main> -->
 
     <footer>
         <p>&copy; 2026 CodeWear Solutions. Tüm hakları saklıdır.</p>
     </footer>
 
+    <!-- JavaScript dosyasını buraya ekliyoruz -->
+    <script src="script.js" defer></script>
 </body>
 </html>
